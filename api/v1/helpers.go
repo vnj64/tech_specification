@@ -14,6 +14,10 @@ type RawResponse struct {
 	payload    interface{}
 }
 
+func (r *RawResponse) Error() error {
+	return r.error
+}
+
 func (r *RawResponse) WithPayload(payload any) *RawResponse {
 	r.payload = payload
 	return r
