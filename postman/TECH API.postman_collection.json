@@ -1,0 +1,618 @@
+{
+	"info": {
+		"_postman_id": "62ba9c2d-7e2d-4353-b57e-53ab7afef817",
+		"name": "TECH API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18367205"
+	},
+	"item": [
+		{
+			"name": "Пользователи",
+			"item": [
+				{
+					"name": "Создать пользователя.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"vnj64\",\r\n    \"firstName\": \"kamil\",\r\n    \"secondName\": \"khabibullin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/user",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\": {\r\n        \"id\": 2,\r\n        \"login\": \"vnj64\",\r\n        \"firstName\": \"kamil\",\r\n        \"secondName\": \"khabibullin\",\r\n        \"roleId\": 1\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/user",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 10:16:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": 200\n    },\n    \"payload\": {\n        \"id\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Получить пользователя.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/user/1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/user/1",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"user",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 10:17:34 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "213"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": 200\n    },\n    \"payload\": {\n        \"user\": {\n            \"id\": 1,\n            \"login\": \"vnj64\",\n            \"firstName\": \"kamil\",\n            \"secondName\": \"khabibullin\",\n            \"createdAt\": \"2024-07-12T13:14:18.733755Z\",\n            \"updatedAt\": \"2024-07-12T13:14:18.733755Z\",\n            \"roleId\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Все пользователи.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/user/users",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/user/users",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"user",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 10:18:09 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "525"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": 200\n    },\n    \"payload\": {\n        \"users\": [\n            {\n                \"id\": 0,\n                \"login\": \"\",\n                \"firstName\": \"\",\n                \"secondName\": \"\",\n                \"createdAt\": \"2024-07-12T13:09:36.01107Z\",\n                \"updatedAt\": \"2024-07-12T13:09:36.01107Z\",\n                \"roleId\": 0\n            },\n            {\n                \"id\": 1,\n                \"login\": \"vnj64\",\n                \"firstName\": \"kamil\",\n                \"secondName\": \"khabibullin\",\n                \"createdAt\": \"2024-07-12T13:14:18.733755Z\",\n                \"updatedAt\": \"2024-07-12T13:14:18.733755Z\",\n                \"roleId\": 1\n            },\n            {\n                \"id\": 2,\n                \"login\": \"vnj64\",\n                \"firstName\": \"kamil\",\n                \"secondName\": \"khabibullin\",\n                \"createdAt\": \"2024-07-12T13:16:53.55355Z\",\n                \"updatedAt\": \"2024-07-12T13:16:53.55355Z\",\n                \"roleId\": 1\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Удалить пользователя.",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/user/2",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/user/2",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"user",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 10:23:13 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": 200\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Обновить пользователя.",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"kamil222\",\r\n    \"firstName\": \"max\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/user/3",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"login\": \"kamil222\",\r\n    \"firstName\": \"max\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/user/3",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"user",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 10:24:30 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": 200\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Роли",
+			"item": [
+				{
+					"name": "Создать роль.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"admin\",\r\n    \"description\": \"its admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/role",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"role\": {\r\n        \"roleId\": 2,\r\n        \"name\": \"user\",\r\n        \"description\": \"its user\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/role",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"role"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 10:24:57 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": 200\n    },\n    \"payload\": {\n        \"roleId\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Получить роль.",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/role/2",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"role",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 10:25:18 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "176"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": 200\n    },\n    \"payload\": {\n        \"role\": {\n            \"roleId\": 2,\n            \"name\": \"user\",\n            \"description\": \"its user\",\n            \"createdAt\": \"2024-07-12T13:24:57.899Z\",\n            \"updatedAt\": \"2024-07-12T13:24:57.899Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Получить все роли.",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/role/roles",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"role",
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 10:25:43 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "441"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": 200\n    },\n    \"payload\": {\n        \"roles\": [\n            {\n                \"roleId\": 0,\n                \"name\": \"\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-07-12T13:06:24.048542Z\",\n                \"updatedAt\": \"2024-07-12T13:06:24.048542Z\"\n            },\n            {\n                \"roleId\": 1,\n                \"name\": \"admin\",\n                \"description\": \"its admin\",\n                \"createdAt\": \"2024-07-12T13:13:05.822331Z\",\n                \"updatedAt\": \"2024-07-12T13:13:05.822331Z\"\n            },\n            {\n                \"roleId\": 2,\n                \"name\": \"user\",\n                \"description\": \"its user\",\n                \"createdAt\": \"2024-07-12T13:24:57.899Z\",\n                \"updatedAt\": \"2024-07-12T13:24:57.899Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Удалить роль.",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/role/0",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"role",
+								"0"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/role/2",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"role",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 11:04:19 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": 200\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Обновить роль.",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"not admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/role/2",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"role",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"not admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/role/2",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"role",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 10:28:35 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": 200\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
