@@ -13,28 +13,6 @@ services:
     networks:
       - tech_net
 
-  app:
-    container_name: tech
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - '9999:9999'
-    environment:
-      - POSTGRESQL_HOST=db
-      - POSTGRESQL_PORT=${POSTGRESQL_PORT}
-      - POSTGRESQL_USER=${POSTGRESQL_USER}
-      - POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
-      - POSTGRESQL_DATABASE=${POSTGRESQL_DATABASE}
-      - SERVER_PROTOCOL=${SERVER_PROTOCOL}
-      - SERVER_PORT=${SERVER_PORT}
-      - SERVER_URL=${SERVER_URL}
-      - DEV_MODE=${DEV_MODE}
-    depends_on:
-      - db
-    networks:
-      - tech_net
-
 networks:
   tech_net:
     driver: bridge
